@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Aplicação Prática - AP3 PCA</title>
+	<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body class="bg">
+	<section class=""> </section>
+	<nav>
+		<object id="obMenu" data="menu.html"></object>
+	</nav>
+
+	<!– Comentário: Texto da pagina principal –>		
+
+			<h1>
+				<p>Algumas formulas para facilitar sua vida na Aquaponia</p>
+			</h1>
+			<div class="small-12">
+				<p>Calculadora de Litros/quantidade de peixes</p>
+
+				<div id="container_ferramenta">
+
+					<div id="area_ferramenta">
+						Basta digitar a Largura, Altura e comprimento em (cm) e depois clicar em "Calcular Área".
+						<br>
+					</div>
+
+					<div class="form">
+						<div class="inputline">
+							Largura (cm):<input id="largura" type="number" class="input" style="width: 8rem;"
+								title="Digite aqui a largura">
+						</div>
+						<div class="inputline">
+							Altura(cm):<input id="altura" type="number" class="input" style="width: 8rem;"
+								title="Digite aqui o lado menor do altura">
+						</div>
+						<div class="inputline">
+							Comprimento(cm):<input id="comprimento" type="number" class="input" style="width: 8rem;"
+								title="Digite aqui o lado maior do comprimento">
+						</div>
+					</div>
+
+					<div id="area_botoes" class="text-center">
+						<input onclick="calcularArea()"     type="button" id="bt_calcular" value="Calcular Área" class="button">
+					</div>					
+
+				</div>
+				
+			</div>
+
+			<!– Comentário: Quantidade de raçao –>
+			<h1>
+				<p>Calculadora da Ração diária fase de Recria inicial</p>
+			</h1>
+			<div class="small-12 columns">
+				<p>Calculadora de raçao para os peixes em fase de Recria inicial (peixes com peso medio entre 30g-200g)</p>
+
+				<div id="container_ferramenta">
+
+					<div id="area_ferramenta">
+						Basta digitar a Quantidade de peixes em (unidades) e  o peso médio (g) depois clicar em "Calcular Ração".
+						<br>
+					</div>
+
+					<div class="form">
+						<div class="inputline">
+							Quantidade de peixes (unid):<input id="peixes" type="number" class="input" style="width: 8rem;"
+								title="Digite aqui a quantidade de peixes">
+						</div>
+						<div class="inputline">
+							Peso médio(g):<input id="peso" type="number" class="input" style="width: 8rem;"
+								title="Digite aqui o peso médio">
+						</div>
+						
+					</div>
+
+					<div id="area_botoes" class="text-center">
+						<input onclick="calcularRacao()"     type="button"  value="Calcular Ração" class="button">
+					</div>				
+
+				</div>
+				
+			</div>
+
+			<!– Comentário: Quantidade de raçao na fase de Engorda e terminação–>
+			<h1>
+				<p>Calculadora da Ração diária fase de Engorda e terminação</p>
+			</h1>
+			<div class="small-12 columns">
+				<p>Calculadora de raçao para os peixes em fase de Engorda e terminação (peixes com peso medio de 200g)</p>
+
+				<div id="container_ferramenta">
+
+					<div id="area_ferramenta">
+						Basta digitar a Quantidade de peixes em (unidades) e  o peso médio (g) depois clicar em "Calcular Ração".
+						<br>
+					</div>
+
+					<div class="form">
+						<div class="inputline">
+							Quantidade de peixes (unid):<input id="peixes2" type="number" class="input" style="width: 8rem;"
+								title="Digite aqui a quantidade de peixes">
+						</div>
+						<div class="inputline">
+							Peso médio(g):<input id="peso2" type="number" class="input" style="width: 8rem;"
+								title="Digite aqui o peso médio">
+						</div>
+						
+					</div>
+
+					<div id="area_botoes" class="text-center">
+						<input onclick="calcularRacao2()"     type="button"  value="Calcular Ração" class="button">
+					</div>					
+
+				</div>
+				
+			</div>
+			<P></p>
+			</section>
+			<p></p>			
+
+			<h1><p>GitHub dos Alunos:</p></h1>
+			<div id="col1">				
+				<a class="rdp" href="https://github.com/jansenguedes" target="_blank"> Jansen </a><br />
+				<a class="rdp" href="https://github.com/marcosmercurio" target="_blank"> Marcos </a></a><br />
+				<a class="rdp" href="https://github.com/afelipe0722" target="_blank"> André </a></a><br />
+				<a class="rdp" href="https://github.com/igor-eduardo44" target="_blank"> Igor </a></a><br />
+			</div>
+
+			<div id="col2">
+			</div>
+			© Copyright Novembro de 2020, Jansen Guedes, Marcos Mercurio, Andre Silva e Igor Correia - Todos os direitos
+			reservados.
+			</div>
+		</body>
+
+		<script>
+			function calcularArea(){
+				var largura = document.getElementById('largura').value
+				var altura = document.getElementById("altura").value
+				var comprimento = document.getElementById("comprimento").value
+				var litro = (largura*altura*comprimento)/1000
+				var kgpeixes = litro/40
+				alert("O seu tanque suporta " + litro + "L e com isso cabem " + kgpeixes + " kgs de peixes")
+			}
+
+			function calcularRacao(){
+				var peixes = document.getElementById('peixes').value
+				var peso = document.getElementById("peso").value
+				var pesokg = (peixes*peso) / 1000
+				var qtdracao = (pesokg * 6) / 100
+				console.log(qtdracao)
+				alert("A quantidade diária de  Ração vai ser " + qtdracao + "kgs")
+			}
+
+			function calcularRacao2(){
+				var peixes2 = document.getElementById('peixes2').value
+				var peso2 = document.getElementById("peso2").value
+				var pesokg2 = (peixes2*peso2) / 1000
+				var qtdracao2 = (pesokg2 * 3) / 100
+				console.log(qtdracao2)
+				alert("A quantidade diária de  Ração vai ser " + qtdracao2 + "kgs")
+			}
+		</script>
+</html>
